@@ -29,5 +29,21 @@ class SwiftDataStructuresTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func testLinkedList() throws {
+        let list = LinkedList<Int>()
+        list.append(value: 4)
+        list.append(value: 3)
+        let node = LinkedListNode(value: 8)
+        list.tail?.next = node
+        XCTAssert(list.tail?.value == 8)
+        
+        // should fail since node is not present in list and is created
+        list.remove(node: LinkedListNode<Int>(value: 4))
+        
+        list.remove(node: node)
+        XCTAssert(list.first?.value == 4)
+        XCTAssert(list.tail?.value == 3)
+    }
 
 }
