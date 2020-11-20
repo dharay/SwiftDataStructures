@@ -45,5 +45,41 @@ class SwiftDataStructuresTests: XCTestCase {
         XCTAssert(list.first?.value == 4)
         XCTAssert(list.tail?.value == 3)
     }
+    
+    func testDoublyLinkedList() throws {
+        let list = DoublyLinkedList<Int>()
+        list.append(value: 5)
+        list.append(value: 2)
+        XCTAssert(list.first?.value == 5)
+        list.removeFirstNode(withValue: 5)
+        XCTAssert(list.first?.value == 2)
+        XCTAssert(!list.isEmpty)
+        list.removeFirstNode(withValue: 2)
+        XCTAssert(list.isEmpty)
+        
+    }
+    
+    func testStack() throws {
+        let stack = Stack<Int>()
+        stack.push(2)
+        let two = stack.pop()
+        XCTAssert(two == 2)
+        XCTAssert(stack.pop() == nil)
+        stack.push(5)
+        stack.push(7)
+        XCTAssert(stack.pop() == 7)
+    }
+    
+    func testQueue() throws {
+        let q = Queue<Int>()
+        q.enqueue(5)
+        q.enqueue(2)
+        print(q.description)
+        XCTAssert(q.dequeue() == 5)
+        print(q.description)
+        XCTAssert(q.dequeue() == 2)
+        XCTAssert(q.isEmpty)
+        
+    }
 
 }

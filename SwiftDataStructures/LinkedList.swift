@@ -1,5 +1,5 @@
 
-open class LinkedList<T:Equatable> {
+open class LinkedList<T> {
     
     private var head: LinkedListNode<T>?
     
@@ -46,18 +46,6 @@ open class LinkedList<T:Equatable> {
         return nil
     }
     
-    public func firstNode(withValue value: T) -> LinkedListNode<T>? {
-        var currNode = head
-
-        while currNode != nil {
-            if currNode?.value == value {
-                return currNode
-            }
-            currNode = currNode?.next
-        }
-        return nil
-    }
-    
     public func removeAll() {
         head = nil
     }
@@ -75,10 +63,17 @@ open class LinkedList<T:Equatable> {
             currNode = currNode?.next
         }
     }
+}
+
+extension LinkedList where T:Equatable {
     
     public func removeFirstNode(withValue value: T) {
         var currNode = head
         if currNode == nil {
+            return
+        }
+        if currNode?.value == value {
+            head = currNode?.next
             return
         }
         while currNode?.next != nil {
@@ -89,9 +84,33 @@ open class LinkedList<T:Equatable> {
             currNode = currNode?.next
         }
     }
+    
+    public func firstNode(withValue value: T) -> LinkedListNode<T>? {
+        var currNode = head
+
+        while currNode != nil {
+            if currNode?.value == value {
+                return currNode
+            }
+            currNode = currNode?.next
+        }
+        return nil
+    }
 }
 
-public class LinkedListNode<T:Equatable> {
+extension LinkedList: CustomStringConvertible {
+    public var description: String {
+        var result:[T] = []
+        var node = first
+        while node != nil {
+            result.append(node!.value)
+            node = node?.next
+        }
+        return result.description
+    }
+}
+
+public class LinkedListNode<T> {
     
     public var value: T
     public var next: LinkedListNode<T>?

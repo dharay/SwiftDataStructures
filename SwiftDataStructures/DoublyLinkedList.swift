@@ -1,5 +1,5 @@
 
-open class DoublyLinkedList<T:Equatable> {
+open class DoublyLinkedList<T> {
     
     private var head: DoublyLinkedListNode<T>?
     private var tail: DoublyLinkedListNode<T>?
@@ -40,18 +40,6 @@ open class DoublyLinkedList<T:Equatable> {
         return nil
     }
     
-    public func firstNode(withValue value: T) -> DoublyLinkedListNode<T>? {
-        var currNode = head
-
-        while currNode != nil {
-            if currNode?.value == value {
-                return currNode
-            }
-            currNode = currNode?.next
-        }
-        return nil
-    }
-    
     public func removeAll() {
         head = nil
         tail = nil
@@ -77,10 +65,17 @@ open class DoublyLinkedList<T:Equatable> {
         
         return
     }
-    
+
+}
+
+extension DoublyLinkedList where T:Equatable {
     public func removeFirstNode(withValue value: T) {
         var currNode = head
         if currNode == nil {
+            return
+        }
+        if currNode?.value == value {
+            removeAll()
             return
         }
         while currNode?.next != nil {
@@ -91,9 +86,33 @@ open class DoublyLinkedList<T:Equatable> {
             currNode = currNode?.next
         }
     }
+    
+    public func firstNode(withValue value: T) -> DoublyLinkedListNode<T>? {
+        var currNode = head
+
+        while currNode != nil {
+            if currNode?.value == value {
+                return currNode
+            }
+            currNode = currNode?.next
+        }
+        return nil
+    }
 }
 
-public class DoublyLinkedListNode<T:Equatable> {
+extension DoublyLinkedList: CustomStringConvertible {
+    public var description: String {
+        var result:[T] = []
+        var node = first
+        while node != nil {
+            result.append(node!.value)
+            node = node?.next
+        }
+        return result.description
+    }
+}
+
+public class DoublyLinkedListNode<T> {
     public var value: T
     public var next: DoublyLinkedListNode<T>?
     weak var previous: DoublyLinkedListNode<T>?
