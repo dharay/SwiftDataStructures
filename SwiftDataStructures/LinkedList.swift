@@ -110,7 +110,7 @@ extension LinkedList: CustomStringConvertible {
     }
 }
 
-public class LinkedListNode<T> {
+open class LinkedListNode<T> {
     
     public var value: T
     public var next: LinkedListNode<T>?

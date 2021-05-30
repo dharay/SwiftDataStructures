@@ -1,5 +1,5 @@
 /// built using logic similar to linked lists
-public class Queue<T> {
+open class Queue<T> {
     
     private var head: QueueNode<T>?
     private var tail: QueueNode<T>?
@@ -55,7 +55,7 @@ extension Queue: CustomStringConvertible {
     }
 }
 
-public class QueueNode<T> {
+open class QueueNode<T> {
     var value: T
     var next: QueueNode<T>?
     weak var previous: QueueNode<T>?

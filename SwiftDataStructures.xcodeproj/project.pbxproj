@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20C39E6026639830008F7AB0 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C39E5F26639830008F7AB0 /* BinaryTree.swift */; };
 		B5673CE2254AAECB007BEE34 /* SwiftDataStructures.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5673CD8254AAECB007BEE34 /* SwiftDataStructures.framework */; };
 		B5673CE7254AAECB007BEE34 /* SwiftDataStructuresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673CE6254AAECB007BEE34 /* SwiftDataStructuresTests.swift */; };
 		B5673CF9254AB243007BEE34 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5673CF8254AB243007BEE34 /* LinkedList.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20C39E5F26639830008F7AB0 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		B5673CD8254AAECB007BEE34 /* SwiftDataStructures.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDataStructures.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5673CDC254AAECB007BEE34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5673CE1254AAECB007BEE34 /* SwiftDataStructuresTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftDataStructuresTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,6 +84,7 @@
 				B5673CFC25500B08007BEE34 /* DoublyLinkedList.swift */,
 				B58C5512255A89DB003331D9 /* Stack.swift */,
 				B58C5516255A89EC003331D9 /* Queue.swift */,
+				20C39E5F26639830008F7AB0 /* BinaryTree.swift */,
 			);
 			path = SwiftDataStructures;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			files = (
 				B5673CF9254AB243007BEE34 /* LinkedList.swift in Sources */,
 				B58C5513255A89DB003331D9 /* Stack.swift in Sources */,
+				20C39E6026639830008F7AB0 /* BinaryTree.swift in Sources */,
 				B5673CFD25500B08007BEE34 /* DoublyLinkedList.swift in Sources */,
 				B58C5517255A89EC003331D9 /* Queue.swift in Sources */,
 			);

@@ -37,7 +37,7 @@ extension Stack: CustomStringConvertible {
     }
 }
 
-public class StackNode<T> {
+open class StackNode<T> {
     var value: T
     var next: StackNode<T>?
     init(value: T) {

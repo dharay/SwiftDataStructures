@@ -112,7 +112,7 @@ extension DoublyLinkedList: CustomStringConvertible {
     }
 }
 
-public class DoublyLinkedListNode<T> {
+open class DoublyLinkedListNode<T> {
     public var value: T
     public var next: DoublyLinkedListNode<T>?
     weak var previous: DoublyLinkedListNode<T>?
