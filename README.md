@@ -1,3 +1,5 @@
 # SwiftDataStructures
 
-# 🚧 In progress 🚧 
+# 🚧 Not In progress 🚧 
+
+dev halted, accepting pull requests
